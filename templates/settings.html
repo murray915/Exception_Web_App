@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <form method="post">
+    {% for key, value in settings_data.items() %}
+      <article class="media content-section">
+        <div class="media-body">
+          <label><strong>{{ value[0] }}</strong></label>
+          <p>{{ value[1] }}</p>
+          <input type="text" name="{{ key }}" value="{{ value[2] }}" class="form-control mb-3">
+        </div>
+      </article>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+  </form>
+{% endblock %}

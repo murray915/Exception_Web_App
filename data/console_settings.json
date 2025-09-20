@@ -1,0 +1,4 @@
+{
+    "root_dictionary": ["Root Directory", "This is the parent folder for exception management e.g E:/magma", "C:/Users/Murray/OneDrive/Documents/Uni/Exception_Web_App/test"], 
+    "heartbeat_rate": ["Heartbeat Rate", "This is the refreshrate of the folder counter", "10"]
+}
