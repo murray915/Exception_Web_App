@@ -3,12 +3,15 @@ import database as db
 import json
 from icecream import ic
 
-#ic.disable()
-ic.enable()
-ic.configureOutput(includeContext=True)
+def ic_print_setting(setting:bool):
+    """ setting on debug/printing for icecream"""    
+    if setting:        
+        ic.enable()
+        ic.configureOutput(includeContext=True)
+    elif not setting:
+        ic.disable()
 
 app = Flask(__name__)
-
 
 @app.route("/")
 @app.route("/home")
@@ -20,6 +23,7 @@ def settings():
 
     with open(".\data\console_settings.json", mode="r", encoding="utf-8") as read_file:
         settings_data = json.load(read_file)
+        settings_data
 
     if request.method == 'POST':
         # Get submitted form data
@@ -40,4 +44,6 @@ def settings():
 
 
 if __name__ == '__main__':
+    ic_print_setting(True)
     app.run(debug=True)
+    ic("test")
